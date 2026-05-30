@@ -13,12 +13,16 @@ Rails.application.routes.draw do
     namespace :admin do
       resource :profile, only: %i[show update]
       resources :requests do
+        collection do
+          get :assigned_to_me
+        end
         member do
           patch :assign
           patch :status
           patch :severity
         end
       end
+      get "assignable_users", to: "requests#assignable_users"
     end
 
     namespace :public do
@@ -54,6 +58,16 @@ Rails.application.routes.draw do
     post "otp/register", to: "otp#register"
 
     get "analytics/summary", to: "analytics#summary"
+
+    resources :notifications, only: [:index] do
+      member do
+        patch :read, to: "notifications#mark_read"
+      end
+      collection do
+        patch :mark_all_read, to: "notifications#mark_all_read"
+        get :unread_count, to: "notifications#unread_count"
+      end
+    end
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

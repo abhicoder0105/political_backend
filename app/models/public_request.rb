@@ -1,9 +1,11 @@
 class PublicRequest < ApplicationRecord
   belongs_to :public_user, class_name: "User", optional: true, inverse_of: :submitted_requests
   belongs_to :assigned_to_user, class_name: "User", optional: true
+  belongs_to :assigned_by_user, class_name: "User", optional: true
   has_many :request_comments, dependent: :destroy
   has_many :request_histories, dependent: :destroy
   has_many :request_activities, dependent: :destroy
+  has_many :notifications, dependent: :nullify
   has_one_attached :attachment
   has_many_attached :resolution_proofs
 

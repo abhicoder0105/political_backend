@@ -20,8 +20,12 @@ class User < ApplicationRecord
 
   has_one_attached :profile_photo
   has_many :submitted_requests, class_name: "PublicRequest", foreign_key: :public_user_id, dependent: :nullify, inverse_of: :public_user
+  has_many :assigned_requests, class_name: "PublicRequest", foreign_key: :assigned_to_user_id, dependent: :nullify
+  has_many :assigned_by_requests, class_name: "PublicRequest", foreign_key: :assigned_by_id, dependent: :nullify
   has_many :request_comments, dependent: :nullify
   has_many :request_histories, dependent: :nullify
+  has_many :notifications, dependent: :destroy
+  has_many :sent_notifications, class_name: "Notification", foreign_key: :from_user_id, dependent: :nullify
 
   validates :mobile_number, presence: { message: "मोबाइल नंबर आवश्यक है" },
             uniqueness: { message: "यह मोबाइल नंबर पहले से पंजीकृत है" },
@@ -33,5 +37,9 @@ class User < ApplicationRecord
 
   def permission?(permission_key)
     super_admin? || RolePermission.joins(:permission).exists?(role: self.class.roles[role], permissions: { key: permission_key })
+  end
+
+  def role_name
+    User.roles.key(role)
   end
 end

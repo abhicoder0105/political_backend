@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_27_135502) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_30_000002) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -86,6 +86,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_27_135502) do
     t.integer "resend_count"
     t.datetime "updated_at", null: false
     t.datetime "verified_at"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "from_user_id"
+    t.text "message", null: false
+    t.string "notification_type"
+    t.integer "public_request_id"
+    t.boolean "read", default: false, null: false
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["created_at"], name: "index_notifications_on_created_at"
+    t.index ["public_request_id"], name: "index_notifications_on_public_request_id"
+    t.index ["user_id", "read"], name: "index_notifications_on_user_id_and_read"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "permissions", force: :cascade do |t|
@@ -166,6 +182,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_27_135502) do
 
   create_table "public_requests", force: :cascade do |t|
     t.string "area"
+    t.datetime "assigned_at"
+    t.integer "assigned_by_id"
     t.string "assigned_to"
     t.integer "assigned_to_user_id"
     t.string "category"
@@ -187,6 +205,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_27_135502) do
     t.datetime "updated_at", null: false
     t.string "village_or_ward"
     t.index ["area"], name: "index_public_requests_on_area"
+    t.index ["assigned_by_id"], name: "index_public_requests_on_assigned_by_id"
     t.index ["assigned_to_user_id"], name: "index_public_requests_on_assigned_to_user_id"
     t.index ["category"], name: "index_public_requests_on_category"
     t.index ["created_at"], name: "index_public_requests_on_created_at"
@@ -304,10 +323,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_27_135502) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "areas", "vidhansabhas"
   add_foreign_key "campaign_supports", "campaigns"
+  add_foreign_key "notifications", "public_requests"
+  add_foreign_key "notifications", "users"
+  add_foreign_key "notifications", "users", column: "from_user_id"
   add_foreign_key "population_records", "areas", column: "area_ref_id"
   add_foreign_key "population_records", "vidhansabhas"
   add_foreign_key "population_records", "village_wards"
   add_foreign_key "pr_posts", "users"
+  add_foreign_key "public_requests", "users", column: "assigned_by_id"
   add_foreign_key "public_requests", "users", column: "assigned_to_user_id"
   add_foreign_key "public_requests", "users", column: "public_user_id"
   add_foreign_key "request_activities", "public_requests"
