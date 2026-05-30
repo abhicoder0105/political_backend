@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign: one
+  name: MyString
+  phone_number: MyString
+  area: MyString
+  village_or_ward: MyString
+  message: MyText
+
+two:
+  campaign: two
+  name: MyString
+  phone_number: MyString
+  area: MyString
+  village_or_ward: MyString
+  message: MyText

@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#15803d"/><stop offset="100%" style="stop-color:#22c55e"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="300" y="200" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">वृक्षारोपण अभियान</text>
+  <text x="300" y="230" text-anchor="middle" font-size="13" fill="#bbf7d0" font-family="system-ui,sans-serif">Tree Plantation Drive</text>
+  <text x="300" y="270" text-anchor="middle" font-size="12" fill="#fff" opacity="0.6" font-family="system-ui,sans-serif">पर्यावरण संरक्षण — हमारा संकल्प</text>
+  <polygon points="280,330 300,290 320,330" fill="#fff" opacity="0.2"/>
+  <polygon points="240,340 260,300 280,340" fill="#fff" opacity="0.12"/>
+  <polygon points="320,340 340,300 360,340" fill="#fff" opacity="0.12"/>
+</svg>

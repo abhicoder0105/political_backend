@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0369a1"/><stop offset="100%" style="stop-color:#0284c7"/></linearGradient></defs>
+  <rect width="300" height="200" fill="url(#bg)"/>
+  <path d="M130 90 L170 90 L150 60 Z" fill="#fff" opacity="0.25"/>
+  <text x="150" y="140" text-anchor="middle" font-size="12" fill="#bae6fd" font-family="system-ui,sans-serif">Solar Energy</text>
+</svg>

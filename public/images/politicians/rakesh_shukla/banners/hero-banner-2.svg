@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1e3a5f"/><stop offset="100%" style="stop-color:#c2410c"/></linearGradient></defs>
+  <rect width="1200" height="500" fill="url(#bg)"/>
+  <text x="600" y="220" text-anchor="middle" font-size="48" font-weight="900" fill="#fff" font-family="system-ui,sans-serif">सेवा, समर्पण, विकास</text>
+  <text x="600" y="270" text-anchor="middle" font-size="20" fill="#fed7aa" font-family="system-ui,sans-serif">Service · Dedication · Development</text>
+  <text x="600" y="320" text-anchor="middle" font-size="15" fill="#fff" opacity="0.6" font-family="system-ui,sans-serif">मेहगांव विधानसभा — जनता के लिए कार्य करने का संकल्प</text>
+  <rect x="480" y="360" width="240" height="44" rx="22" fill="#fff" opacity="0.15"/>
+  <text x="600" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">Register Your Grievance</text>
+</svg>

@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#c2410c"/>
+  <circle cx="200" cy="150" r="80" fill="white" opacity="0.9"/>
+  <text x="200" y="170" font-family="Arial" font-size="60" font-weight="bold" fill="#c2410c" text-anchor="middle">RS</text>
+  <rect x="80" y="270" width="240" height="100" rx="10" fill="white" opacity="0.8"/>
+  <text x="200" y="310" font-family="Arial" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle">राकेश शुक्ला</text>
+  <text x="200" y="345" font-family="Arial" font-size="14" fill="#c2410c" text-anchor="middle">कैबिनेट मंत्री, MP सरकार</text>
+</svg>

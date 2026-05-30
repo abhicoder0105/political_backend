@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#7c3aed"/><stop offset="100%" style="stop-color:#a855f7"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="300" y="250" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">मेहगांव में स्वच्छता अभियान</text>
+  <text x="300" y="280" text-anchor="middle" font-size="12" fill="#e9d5ff" font-family="system-ui,sans-serif">Cleanliness Campaign Preparation</text>
+  <text x="300" y="320" text-anchor="middle" font-size="11" fill="#fff" opacity="0.5" font-family="system-ui,sans-serif">सभी वार्डों में सफाई व्यवस्था चुस्त-दुरुस्त</text>
+</svg>

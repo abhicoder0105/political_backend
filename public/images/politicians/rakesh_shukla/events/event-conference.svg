@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1e3a5f"/><stop offset="100%" style="stop-color:#1e40af"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="300" cy="160" r="50" fill="#fff" opacity="0.08"/>
+  <text x="300" y="260" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">सम्मेलन एवं संगोष्ठी</text>
+  <text x="300" y="290" text-anchor="middle" font-size="12" fill="#bfdbfe" font-family="system-ui,sans-serif">Conference &amp; Seminar</text>
+  <text x="300" y="330" text-anchor="middle" font-size="11" fill="#fff" opacity="0.4" font-family="system-ui,sans-serif">नीति निर्माण में जनता की भागीदारी</text>
+</svg>

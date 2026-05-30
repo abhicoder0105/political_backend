@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  public_request: one
+  user: one
+  from_status: MyString
+  to_status: MyString
+  note: MyText
+
+two:
+  public_request: two
+  user: two
+  from_status: MyString
+  to_status: MyString
+  note: MyText

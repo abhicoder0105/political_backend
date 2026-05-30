@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  public_request: one
+  user: one
+  action: MyString
+  old_value: MyString
+  new_value: MyString
+  notes: MyText
+
+two:
+  public_request: two
+  user: two
+  action: MyString
+  old_value: MyString
+  new_value: MyString
+  notes: MyText

@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 1
+  gender: 1
+  phone_number: MyString
+  address: MyText
+  area: MyString
+  village_or_ward: MyString
+  rural_or_urban: 1
+  family_count: 1
+  aadhaar_image_url: MyString
+  whatsapp_consent: false
+  notes: MyText
+  tags: MyText
+  vidhansabha: one
+  area_ref: one
+  village_ward: one
+
+two:
+  name: MyString
+  age: 1
+  gender: 1
+  phone_number: MyString
+  address: MyText
+  area: MyString
+  village_or_ward: MyString
+  rural_or_urban: 1
+  family_count: 1
+  aadhaar_image_url: MyString
+  whatsapp_consent: false
+  notes: MyText
+  tags: MyText
+  vidhansabha: two
+  area_ref: two
+  village_ward: two

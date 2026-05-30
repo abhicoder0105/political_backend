@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#c2410c"/><stop offset="100%" style="stop-color:#ea580c"/></linearGradient></defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="180" r="90" fill="#fff" opacity="0.2"/>
+  <text x="200" y="195" text-anchor="middle" font-size="70" font-weight="900" fill="#fff" font-family="system-ui,sans-serif">RS</text>
+  <text x="200" y="310" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">Rakesh Shukla</text>
+  <rect x="100" y="330" width="200" height="2" rx="1" fill="#fff" opacity="0.3"/>
+</svg>

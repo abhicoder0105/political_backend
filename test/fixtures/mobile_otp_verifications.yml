@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_number: MyString
+  otp_digest: MyString
+  expires_at: 2026-05-27 16:05:59
+  verified_at: 2026-05-27 16:05:59
+  attempts_count: 1
+  resend_count: 1
+  last_sent_at: 2026-05-27 16:05:59
+  purpose: MyString
+  ip_address: MyString
+
+two:
+  phone_number: MyString
+  otp_digest: MyString
+  expires_at: 2026-05-27 16:05:59
+  verified_at: 2026-05-27 16:05:59
+  attempts_count: 1
+  resend_count: 1
+  last_sent_at: 2026-05-27 16:05:59
+  purpose: MyString
+  ip_address: MyString

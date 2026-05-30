@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#c2410c"/><stop offset="100%" style="stop-color:#f97316"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="300" y="200" text-anchor="middle" font-size="22" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">जन समस्या शिविर</text>
+  <text x="300" y="230" text-anchor="middle" font-size="13" fill="#fed7aa" font-family="system-ui,sans-serif">Public Grievance Camp</text>
+  <rect x="200" y="260" width="200" height="3" rx="1.5" fill="#fff" opacity="0.3"/>
+  <text x="300" y="300" text-anchor="middle" font-size="12" fill="#fff" opacity="0.6" font-family="system-ui,sans-serif">आपकी समस्या — हमारी प्राथमिकता</text>
+</svg>

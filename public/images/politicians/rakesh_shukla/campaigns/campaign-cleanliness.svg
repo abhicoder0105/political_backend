@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0369a1"/><stop offset="100%" style="stop-color:#0ea5e9"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="300" y="240" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">स्वच्छता अभियान</text>
+  <text x="300" y="270" text-anchor="middle" font-size="13" fill="#bae6fd" font-family="system-ui,sans-serif">Cleanliness Drive</text>
+  <rect x="200" y="300" width="200" height="3" rx="1.5" fill="#fff" opacity="0.3"/>
+  <text x="300" y="335" text-anchor="middle" font-size="12" fill="#fff" opacity="0.5" font-family="system-ui,sans-serif">स्वच्छ भारत — स्वस्थ भारत</text>
+</svg>

@@ -1,0 +1,37 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+# === S3 CONFIGURATION ===
+# To enable S3:
+# 1. Uncomment the amazon block below
+# 2. Run: bin/rails credentials:edit
+# 3. Add: aws:
+#          access_key_id: YOUR_ACCESS_KEY
+#          secret_access_key: YOUR_SECRET_KEY
+# 4. Update region and bucket values below
+# 5. Uncomment gem "aws-sdk-s3" in Gemfile
+# 6. Run: bundle install
+# amazon:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   region: ap-south-1
+#   bucket: rakesh-shukla-crm-<%= Rails.env %>
+
+# Remember not to checkin your GCS keyfile to a repository
+# google:
+#   service: GCS
+#   project: your_project
+#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
+#   bucket: your_own_bucket-<%= Rails.env %>
+
+# mirror:
+#   service: Mirror
+#   primary: local
+#   mirrors: [ amazon, google, microsoft ]

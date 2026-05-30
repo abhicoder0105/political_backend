@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0f766e"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <g fill="#fff" opacity="0.1">
+    <rect x="130" y="110" width="50" height="70" rx="6"/><rect x="210" y="80" width="50" height="100" rx="6"/>
+    <rect x="290" y="100" width="50" height="80" rx="6"/>
+  </g>
+  <text x="300" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">शिक्षा में सुधार की पहल</text>
+  <text x="300" y="270" text-anchor="middle" font-size="12" fill="#99f6e4" font-family="system-ui,sans-serif">Education Reform Initiative</text>
+  <text x="300" y="310" text-anchor="middle" font-size="11" fill="#fff" opacity="0.5" font-family="system-ui,sans-serif">स्कूलों में बुनियादी सुविधाएं सुधारी जाएंगी</text>
+</svg>

@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#dc2626"/><stop offset="50%" style="stop-color:#c2410c"/><stop offset="100%" style="stop-color:#9a3412"/></linearGradient></defs>
+  <rect width="1200" height="500" fill="url(#bg)"/>
+  <text x="600" y="200" text-anchor="middle" font-size="56" font-weight="900" fill="#fff" font-family="system-ui,sans-serif">नवकरणीय ऊर्जा क्रांति</text>
+  <text x="600" y="255" text-anchor="middle" font-size="20" fill="#fed7aa" font-family="system-ui,sans-serif">Renewable Energy Revolution in Madhya Pradesh</text>
+  <text x="600" y="310" text-anchor="middle" font-size="14" fill="#fff" opacity="0.7" font-family="system-ui,sans-serif">Solar · Wind · Sustainable Development</text>
+  <polygon points="560,370 600,330 640,370" fill="#fff" opacity="0.2"/>
+  <rect x="540" y="380" width="120" height="4" rx="2" fill="#f97316"/>
+  <text x="600" y="420" text-anchor="middle" font-size="13" fill="#fff" opacity="0.5" font-family="system-ui,sans-serif">Ministry of New &amp; Renewable Energy</text>
+</svg>
