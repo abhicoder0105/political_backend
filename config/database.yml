@@ -17,9 +17,29 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
+<% db_url = ENV["DATABASE_URL"] %>
+<% if db_url.present? %>
+  <% uri = URI.parse(db_url) %>
+  <% db_host = uri.host %>
+  <% db_port = uri.port %>
+  <% db_name = uri.path.delete_prefix("/") %>
+  <% db_user = uri.user %>
+  <% db_pass = uri.password %>
+<% else %>
+  <% # Fallback env vars - set these in Render dashboard if DATABASE_URL isn't injected %>
+  <% db_host = ENV["DB_HOST"] %>
+  <% db_port = ENV["DB_PORT"] %>
+  <% db_name = ENV["DB_NAME"] %>
+  <% db_user = ENV["DB_USERNAME"] %>
+  <% db_pass = ENV["DB_PASSWORD"] %>
+<% end %>
 # Production uses PostgreSQL via DATABASE_URL (provided by Render).
 production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= db_host %>
+  port: <%= db_port || 5432 %>
+  database: <%= db_name %>
+  username: <%= db_user %>
+  password: <%= db_pass %>

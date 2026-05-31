@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_30_000002) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_31_072657) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -260,6 +260,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_30_000002) do
     t.datetime "updated_at", null: false
     t.index ["permission_id"], name: "index_role_permissions_on_permission_id"
     t.index ["role", "permission_id"], name: "index_role_permissions_on_role_and_permission_id", unique: true
+  end
+
+  create_table "solid_cable_messages", force: :cascade do |t|
+    t.binary "channel", limit: 1024, null: false
+    t.bigint "channel_hash", null: false
+    t.datetime "created_at", null: false
+    t.binary "payload", limit: 536870912, null: false
+    t.index ["channel", "created_at"], name: "index_solid_cable_messages_on_channel_and_created_at", order: { created_at: :desc }
+    t.index ["channel_hash"], name: "index_solid_cable_messages_on_channel_hash"
   end
 
   create_table "users", force: :cascade do |t|

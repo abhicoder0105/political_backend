@@ -3,7 +3,7 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.3"
 # Use SQLite locally on Windows for development and test.
-gem "sqlite3", ">= 2.1"
+gem "sqlite3", ">= 2.1", group: [:development, :test]
 
 # Use PostgreSQL in production on Render
 gem "pg", "~> 1.1"
@@ -31,6 +31,9 @@ gem "kamal", require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
+
+# Use Active Storage variants for image resizing
+gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors", "~> 3.0"

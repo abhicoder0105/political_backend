@@ -1,4 +1,13 @@
-frontend_origins = (ENV.fetch("FRONTEND_ORIGIN", "http://localhost:5173")).split(",").map(&:strip)
+default_frontend_origins = [
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "http://localhost:5174",
+  "http://127.0.0.1:5174",
+  "http://localhost:5175",
+  "http://127.0.0.1:5175"
+].join(",")
+
+frontend_origins = ENV.fetch("FRONTEND_ORIGIN", default_frontend_origins).split(",").map(&:strip)
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
