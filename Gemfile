@@ -5,8 +5,8 @@ gem "rails", "~> 8.1.3"
 # Use SQLite locally on Windows for development and test.
 gem "sqlite3", ">= 2.1"
 
-# PostgreSQL can be re-enabled for production later:
-# gem "pg", "~> 1.1"
+# Use PostgreSQL in production on Render
+gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]

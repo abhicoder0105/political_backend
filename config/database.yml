@@ -17,23 +17,9 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
-# Production can use PostgreSQL when deployed. Keep pg disabled locally unless
-# you intentionally re-enable it in the Gemfile.
+# Production uses PostgreSQL via DATABASE_URL (provided by Render).
 production:
-  primary: &primary_production
-    adapter: postgresql
-    encoding: unicode
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    url: <%= ENV["DATABASE_URL"] %>
-  cache:
-    <<: *primary_production
-    database: political_app_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: political_app_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: political_app_production_cable
-    migrations_paths: db/cable_migrate
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV["DATABASE_URL"] %>
