@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :request_histories, dependent: :nullify
   has_many :notifications, dependent: :destroy
   has_many :sent_notifications, class_name: "Notification", foreign_key: :from_user_id, dependent: :nullify
+  has_many :mobile_otp_verifications, as: :verifiable, dependent: :nullify
 
   validates :mobile_number, presence: { message: "मोबाइल नंबर आवश्यक है" },
             uniqueness: { message: "यह मोबाइल नंबर पहले से पंजीकृत है" },
@@ -33,7 +34,7 @@ class User < ApplicationRecord
   validates :name, format: { with: /\A[\p{L} .'-]+\z/, message: "नाम में केवल अक्षर और स्थान हो सकते हैं", allow_blank: true }
   validates :role, presence: { message: "भूमिका आवश्यक है" }, inclusion: { in: roles.keys, message: "%{value} एक मान्य भूमिका नहीं है" }
   validates :password, length: { minimum: 6, message: "पासवर्ड कम से कम 6 अक्षर का होना चाहिए" }, if: -> { password.present? }
-  validates :otp_code, format: { with: /\A\d{6}\z/, message: "OTP 6 अंकों का होना चाहिए" }, allow_blank: true
+  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, allow_blank: true
 
   def permission?(permission_key)
     super_admin? || RolePermission.joins(:permission).exists?(role: self.class.roles[role], permissions: { key: permission_key })
@@ -41,5 +42,9 @@ class User < ApplicationRecord
 
   def role_name
     User.roles.key(role)
+  end
+
+  def as_public_json
+    as_json(only: %i[id name mobile_number email role area village_or_ward])
   end
 end

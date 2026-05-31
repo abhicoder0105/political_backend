@@ -3,11 +3,13 @@ Rails.application.routes.draw do
     post "auth/request_otp", to: "auth#request_otp"
     post "auth/verify_otp", to: "auth#verify_otp"
     post "auth/admin_login", to: "auth#admin_login"
+
     post "public_users/request_otp", to: "public_users#request_otp"
     post "public_users/verify_otp", to: "public_users#verify_otp"
     get "public_users/profile", to: "public_users#profile"
     patch "public_users/profile", to: "public_users#update_profile"
     get "public_users/requests", to: "public_users#requests"
+
     get "public_requests/:id/track", to: "public_requests#track"
 
     namespace :admin do
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
         end
       end
       resources :campaign_supports, only: %i[create]
+      post "signup", to: "registrations#create"
     end
 
     resources :vidhansabhas
@@ -70,10 +73,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

@@ -16,6 +16,7 @@ class Campaign < ApplicationRecord
   validate :scheduled_at_cannot_be_in_past, if: -> { scheduled_at.present? && campaign_status == 'scheduled' }
 
   has_one_attached :uploaded_image
+  has_many :campaign_supports, dependent: :destroy
 
   def display_image_url
     if uploaded_image.attached?

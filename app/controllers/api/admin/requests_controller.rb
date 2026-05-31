@@ -69,6 +69,21 @@ module Api
         render json: serialize_request(@request, detail: true)
       end
 
+      def assignable_users
+        users = User.where(role: User.roles.values_at(:field_worker, :area_manager, :volunteer, :district_manager))
+                    .select(:id, :name, :mobile_number, :role)
+                    .order(:name)
+
+        render json: users.map { |u|
+          {
+            id: u.id,
+            name: u.name,
+            mobile_number: u.mobile_number,
+            role: u.role_name
+          }
+        }
+      end
+
       def severity
         old_value = @request.severity
         @request.update!(severity: params.require(:severity))

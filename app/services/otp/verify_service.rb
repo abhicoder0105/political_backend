@@ -1,5 +1,9 @@
 class Otp::VerifyService
   def self.call(phone_number:, otp:, purpose:)
+    unless otp.match?(/\A\d{6}\z/)
+      return { success: false, error: "OTP 6 अंकों का होना चाहिए" }
+    end
+
     record = MobileOtpVerification.where(phone_number: phone_number, purpose: purpose)
                                    .valid
                                    .order(created_at: :desc)
@@ -9,8 +13,8 @@ class Otp::VerifyService
       return { success: false, error: "कोई वैध OTP नहीं मिला। कृपया पहले OTP भेजें।" }
     end
 
-    if record.attempts_count >= MobileOtpVerification::MAX_ATTEMPTS
-      record.update!(expires_at: Time.current)
+    if record.max_attempts_reached?
+      record.invalidate!
       return { success: false, error: "बहुत अधिक गलत प्रयास। कृपया पुनः OTP भेजें।" }
     end
 
@@ -20,6 +24,10 @@ class Otp::VerifyService
     if expected_digest != actual_digest
       record.increment!(:attempts_count)
       remaining = MobileOtpVerification::MAX_ATTEMPTS - record.attempts_count
+      if remaining <= 0
+        record.invalidate!
+        return { success: false, error: "बहुत अधिक गलत प्रयास। कृपया पुनः OTP भेजें।" }
+      end
       return { success: false, error: "गलत OTP। #{remaining} प्रयास शेष।" }
     end
 

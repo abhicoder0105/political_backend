@@ -1,5 +1,16 @@
 class Api::Public::CampaignSupportsController < ApplicationController
   def create
+    phone = params.require(:campaign_support).require(:phone_number)
+
+    otp_record = MobileOtpVerification.where(phone_number: phone, purpose: "campaign_support")
+                                       .where.not(verified_at: nil)
+                                       .order(created_at: :desc)
+                                       .first
+
+    unless otp_record
+      return render json: { error: "पहले OTP सत्यापित करें" }, status: :unprocessable_entity
+    end
+
     support = CampaignSupport.new(support_params)
     if support.save
       render json: { success: true, message: "समर्थन सफलतापूर्वक दर्ज हुआ" }, status: :created
