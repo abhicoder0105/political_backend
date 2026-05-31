@@ -11,7 +11,9 @@ frontend_origins = ENV.fetch("FRONTEND_ORIGIN", default_frontend_origins).split(
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins frontend_origins
+    origins(*frontend_origins) { |source, _env|
+      source.match?(/\.vercel\.app\z/) || frontend_origins.include?(source)
+    }
 
     resource "*",
       headers: :any,
