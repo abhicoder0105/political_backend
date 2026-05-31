@@ -1,0 +1,37 @@
+# Rails
+log/*
+tmp/*
+storage/*
+!/log/.keep
+!/tmp/.keep
+!/storage/.keep
+
+# Environment files
+.env*
+config/master.key
+config/credentials/*.key
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+vendor/bundle/
+.bundle/
+/node_modules/
+
+# Docker
+!.dockerignore
+
+# CI
+.github/
+
+# Frontend & Mobile (separate repos)
+/frontend/
+/mobile/
