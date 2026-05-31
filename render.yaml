@@ -1,7 +1,6 @@
 services:
   - type: web
     name: political-app-api
-    runtime: image
     dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /up
