@@ -15,7 +15,7 @@ module Api
       )
 
       if result[:success]
-        render json: { message: result[:message] }
+        render json: { message: result[:message], otp: result[:otp] }
       else
         status = result[:error].include?("प्रतीक्षा") ? :too_many_requests : :unprocessable_entity
         render json: { error: result[:error], retry_after: result[:retry_after] }, status: status

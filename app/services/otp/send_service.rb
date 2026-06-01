@@ -47,6 +47,6 @@ class Otp::SendService
     provider = SmsProviderResolver.resolve
     provider.send(phone_number, message)
 
-    { success: true, message: "OTP भेज दिया गया है" }
+    { success: true, message: "OTP भेज दिया गया है", otp: otp }
   end
 end
