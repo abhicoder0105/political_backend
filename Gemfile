@@ -33,7 +33,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Use Active Storage variants for image resizing
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 2.0"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem "rack-cors", "~> 3.0"
